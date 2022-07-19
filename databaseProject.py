@@ -26,9 +26,50 @@ while True:
         query = "Insert into user values ('{}',{},'{}',{})".format(name,age,address,account)
         cursor.execute(query)
         con.commit()
-        print("Data Entered Successfully!!")
+        print("Account Open Successfully!!")
 
     # cash deposit
+    # name
+    # amount
+    elif choice == 2:
+        name = input("enter the name")
+        amt = int(input("Enter the amount"))
+
+        query = "Update user set account = {} where name = '{}'".format(amt,name)
+
+        cursor.execute(query)
+        con.commit()
+        print("Cash Deposit!!")
+
+    # cash withdrawl
+    # name
+    # amount
+
+    elif choice == 3:
+        name = input("enter the name")
+        amt = int(input("Enter the amount"))
+
+        query = "Update user set account = {} where name = '{}'".format(amt,name)
+
+        cursor.execute(query)
+        con.commit()
+        print("Cash Withdrawl!!")
+
+
+    #     Account details
+    elif choice == 4:
+        query = "select * from user"
+        cursor.execute(query)
+
+        acc_details = cursor.fetchone()
+        print(acc_details)
+
+
+
+
+
+
+
 
 
 
